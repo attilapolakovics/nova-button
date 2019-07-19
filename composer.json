@@ -1,11 +1,15 @@
 {
-    "name": "dillingham/nova-button",
+    "name": "attilapolakovics/nova-button",
     "description": "Nova button package",
     "license": "MIT",
     "authors": [
         {
             "name": "Brian Dillingham",
             "email": "bdillingham88@gmail.com"
+        },
+        {
+            "name": "Attila Polákovics",
+            "email": "attila.polakovi@gmail.com"
         }
     ],
     "autoload": {
