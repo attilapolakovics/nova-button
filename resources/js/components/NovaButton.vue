@@ -67,6 +67,7 @@
         this.$emit('clicked');
         Nova.$emit('nova-button-clicked', {
           resourceId: this.resourceId,
+          resourceName: this.resourceName,
         });
 
         try {
@@ -75,18 +76,26 @@
           this.loading = false;
           queue.hasSuccess = true;
           queue.remove(this.resourceId);
+          Nova.$emit('nova-button-success', {
+            resourceId: this.resourceId,
+            resourceName: this.resourceName,
+          });
           this.$emit('success');
         } catch (error) {
           this.error = true;
           this.loading = false;
           queue.hasError = true;
           queue.remove(this.resourceId);
+          Nova.$emit('nova-button-error', {
+            resourceId: this.resourceId,
+            resourceName: this.resourceName,
+          });
           this.$emit('error');
         }
         this.$emit('finished');
         Nova.$emit('nova-button-finished', {
-          field: this.field,
           resourceId: this.resourceId,
+          resourceName: this.resourceName,
         });
       },
       post () {
